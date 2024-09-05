@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+#include <time.h>
 
 /*
 ARGUMENTACION
@@ -9,7 +9,20 @@ con valore muy grandes la pila puede llenarse y el programa no funcionar. Por el
 funcion iterativa hace un uso minimo de memoria porque utiliza una variable acumulativa para el resultado
 
 
+Ejemplo: ejecucion de programa que calcula faltorial de 50000,
+se muestran los tiempos del uso de los dos estilos de programacion
+
+introduce numero:  50000
+
+ El factorial (Iterativo) es: 0
+Tiempo de ejecución recursivo: 0.00012400 segundos
+
+ El factorial (Recursivo) es: 0
+ Tiempo de ejecución iterativo: 0.03790000 segundos
+
 */
+
+
 int factorialIterativo(int num){
     for(int i = num ; i-1 != 0 ; i--){
         num=num*(i-1);
@@ -23,12 +36,31 @@ int factorialRecursivo(int num){
 }
 int main(void)
 {
+
+
+clock_t inicio, fin;
+double tiempoIterativo, tiempoRecursivo;
 int x;
+
 printf("\nintroduce numero:  ");
 scanf("%d",&x);
+
+inicio = clock();
 int resultadoRecursivo = factorialRecursivo(x);
-printf("\n El factorial (Iterativo) es: %d \n",resultadoRecursivo);
+fin = clock();
+tiempoRecursivo = (double)(fin - inicio) / CLOCKS_PER_SEC;
+
+
+inicio = clock();
 int resultadoIterativo = factorialIterativo(x);
-printf("\n El factorial (Recursivo) es: %d \n ",resultadoIterativo);
+fin = clock();
+tiempoIterativo = (double)(fin - inicio) / CLOCKS_PER_SEC;
+
+
+printf("\n El factorial (Iterativo) es: %d \n",resultadoIterativo);
+printf("Tiempo de ejecución recursivo: %.8f segundos\n", tiempoIterativo);
+
+printf("\n El factorial (Recursivo) es: %d \n ",resultadoRecursivo);
+printf("Tiempo de ejecución iterativo: %.8f segundos\n", tiempoRecursivo);
 return 0;
 }
