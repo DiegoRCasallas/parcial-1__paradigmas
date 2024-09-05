@@ -9,17 +9,16 @@ con valore muy grandes la pila puede llenarse y el programa no funcionar. Por el
 funcion iterativa hace un uso minimo de memoria porque utiliza una variable acumulativa para el resultado
 
 
-Ejemplo: ejecucion de programa que calcula faltorial de 50000,
+Ejemplo: ejecucion de programa que calcula faltorial de 10,
 se muestran los tiempos del uso de los dos estilos de programacion
 
-introduce numero:  50000
+introduce numero:  10
 
- El factorial (Iterativo) es: 0
-Tiempo de ejecución recursivo: 0.00012400 segundos
+ El factorial (Iterativo) es: 3628800
+Tiempo de ejecución recursivo: 0.00000000 segundos
 
- El factorial (Recursivo) es: 0
- Tiempo de ejecución iterativo: 0.03790000 segundos
-
+ El factorial (Recursivo) es: 3628800
+ Tiempo de ejecución iterativo: 0.00000200 segundos
 */
 
 
